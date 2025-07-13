@@ -151,7 +151,7 @@ To ensure no data loss, ADF’s fault tolerance is used:
 
 
 
-## Chat History References
+## AI Chat History References
 
 The following links provide context from AI interactions related to the project:
 

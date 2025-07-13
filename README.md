@@ -87,7 +87,7 @@ To ensure no data loss, ADF’s fault tolerance is used:
 ## Component Breakdown and Single-Region Confirmation
 
 1. **Cosmos DB (Current)**:
-   - **Budget Source**: `ExportedEstimate (3).xlsx` specifies Azure Cosmos DB for NoSQL, single-region write (Central India), 600 GB storage, 2 million RUs.
+   - **Budget Source**: `Azure Price estimation/current-budget.xlsx` specifies Azure Cosmos DB for NoSQL, single-region write (Central India), 600 GB storage, 2 million RUs.
    - **Cost**: $171.57/month.
    - **Details**:
      - Storage: 600 GB × $0.285/GB/month = $171.00.
@@ -96,7 +96,7 @@ To ensure no data loss, ADF’s fault tolerance is used:
    - **Single Region**: Central India (single-master write).
 
 2. **Cosmos DB (Proposed)**:
-   - **Budget Source**: `ExportedEstimate (4).xlsx` specifies Azure Cosmos DB for NoSQL, single-region write (Central India), 300 GB storage, 1 million RUs.
+   - **Budget Source**: `Azure Price estimation/proposed-budget-estimation.xlsx` specifies Azure Cosmos DB for NoSQL, single-region write (Central India), 300 GB storage, 1 million RUs.
    - **Cost**: $85.785/month.
    - **Details**:
      - Storage: 300 GB × $0.285/GB/month = $85.50.
@@ -105,7 +105,7 @@ To ensure no data loss, ADF’s fault tolerance is used:
    - **Single Region**: Central India (single-master write).
 
 3. **Blob Storage Cool Tier (GRS)**:
-   - **Budget Source**: `ExportedEstimate (4).xlsx` specifies Block Blob Storage, GRS redundancy, Cool Access Tier, Central India, 300 GB capacity, with 30 × 10,000 write operations, 3 × 10,000 list/create operations, 100 × 10,000 read operations, and 300 GB geo-replication data transfer.
+   - **Budget Source**: `Azure Price estimation/proposed-budget-estimation.xlsx` specifies Block Blob Storage, GRS redundancy, Cool Access Tier, Central India, 300 GB capacity, with 30 × 10,000 write operations, 3 × 10,000 list/create operations, 100 × 10,000 read operations, and 300 GB geo-replication data transfer.
    - **Cost**: $40.93132/month.
    - **Details**:
      - Storage: 300 GB × $0.026/GB/month = $7.80.
@@ -118,7 +118,7 @@ To ensure no data loss, ADF’s fault tolerance is used:
    - **Single Region with GRS**: Primary storage and access in Central India; GRS replicates to a secondary region for redundancy but does not affect API access.
 
 4. **Blob Storage DLQ (Hot Tier, LRS)**:
-   - **Budget Source**: `ExportedEstimate (4).xlsx` specifies Block Blob Storage, LRS redundancy, Hot Access Tier, Central India, 30 GB capacity, with 50 × 10,000 write operations, 11 × 10,000 list/create operations, 100 × 10,000 read operations, 1 × 10,000 other operations, and 1,000 GB data retrieval/write.
+   - **Budget Source**: `Azure Price estimation/proposed-budget-estimation.xlsx` specifies Block Blob Storage, LRS redundancy, Hot Access Tier, Central India, 30 GB capacity, with 50 × 10,000 write operations, 11 × 10,000 list/create operations, 100 × 10,000 read operations, 1 × 10,000 other operations, and 1,000 GB data retrieval/write.
    - **Cost**: $4.3994/month.
    - **Details**:
      - Storage: 30 GB × $0.0208/GB/month = $0.624.
@@ -126,7 +126,7 @@ To ensure no data loss, ADF’s fault tolerance is used:
    - **Single Region**: Central India (LRS, no geo-replication).
 
 5. **Azure Data Factory (ADF)**:
-   - **Budget Source**: `ExportedEstimate (4).xlsx` specifies ADF in Central India, with 1 activity run, 0.5 × 8 General Purpose vCores × 31 hours.
+   - **Budget Source**: `Azure Price estimation/proposed-budget-estimation.xlsx` specifies ADF in Central India, with 1 activity run, 0.5 × 8 General Purpose vCores × 31 hours.
    - **Cost**: $36.2495/month.
    - **Single Region**: Central India (Azure Integration Runtime).
 

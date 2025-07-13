@@ -21,11 +21,7 @@ variable "storage_account_name" {
   description = "Name of the Azure Storage account (must be globally unique, 3-24 chars, lowercase)"
 }
 
-variable "redis_cache_name" {
-  type        = string
-  description = "Name of the Azure Cache for Redis instance"
-  default     = "billing-redis"
-}
+
 
 variable "function_app_archive_name" {
   type        = string
@@ -33,8 +29,3 @@ variable "function_app_archive_name" {
   default     = "billing-archive-func"
 }
 
-variable "function_app_api_name" {
-  type        = string
-  description = "Name of the Azure Function App for API and Redis sync"
-  default     = "billing-api-func"
-}

@@ -1,0 +1,1 @@
+# cosmosdb-billing-cost-optimizer

@@ -1,0 +1,7 @@
+resource_group_name      = "billing-management-rg"
+location                = "East US"
+cosmos_db_account_name  = "billing-cosmos-db"
+storage_account_name    = "billingstorage12345" 
+redis_cache_name        = "billing-redis"
+function_app_archive_name = "billing-archive-func"
+function_app_api_name   = "billing-api-func"

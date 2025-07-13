@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0" version="28.0.4">
+  <diagram name="Azure Billing Architecture" id="pSsBcbX-CROOirbiUkXo">
+    <mxGraphModel dx="864" dy="474" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-1" value="Client&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="135" y="20" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-2" value="Application/API Layer&lt;br&gt;(Service)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-4" value="Cosmos DB&#xa;(&lt; 90 days)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="240" y="230" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-5" value="Azure Blob Storage&#xa;(archived)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="480" y="230" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-7" value="ADF Pipeline (Nightly):&lt;br&gt;Query Cosmos DB for records &amp;gt; 90 days&lt;br&gt;Write to Blob Storage (cold tier)&lt;br&gt;Verify, then delete from Cosmos DB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="310" y="410" width="250" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="ikuJZRPBQpnWAtw_iCJe-1" target="ikuJZRPBQpnWAtw_iCJe-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="ikuJZRPBQpnWAtw_iCJe-4" target="ikuJZRPBQpnWAtw_iCJe-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;dashed=1;" edge="1" parent="1" source="ikuJZRPBQpnWAtw_iCJe-7" target="ikuJZRPBQpnWAtw_iCJe-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;dashed=1;" edge="1" parent="1" source="ikuJZRPBQpnWAtw_iCJe-7" target="ikuJZRPBQpnWAtw_iCJe-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ikuJZRPBQpnWAtw_iCJe-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.424;exitY=1.08;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ikuJZRPBQpnWAtw_iCJe-2" target="ikuJZRPBQpnWAtw_iCJe-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="170" as="sourcePoint" />
+            <mxPoint x="450" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="166" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,155 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0" version="28.0.4">
+  <diagram name="Azure Billing Architecture" id="WnPwragF79b25hSU-ODu">
+    <mxGraphModel dx="1728" dy="2048" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="A07XjkqsezcwPWkaJlvR-113" value="3a: Invalidate Cache" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-114" value="5a: Not Found in Cosmos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-115" value="7a: Not Found in Blob" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-116" value="8: 404 Not Found" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FF0000;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-117" value="Manual Retry Trigger" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#808080;strokeWidth=1;dashed=1;fontSize=12;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-153" value="3a: Invalidate Cache" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-154" value="5a: Not Found in Cosmos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-155" value="7a: Not Found in Blob" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-156" value="8: 404 Not Found" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FF0000;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-157" value="Manual Retry Trigger" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#808080;strokeWidth=1;dashed=1;fontSize=12;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-182" value="3a: Invalidate Cache" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-183" value="5a: Not Found in Cosmos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-184" value="7a: Not Found in Blob" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-185" value="8: 404 Not Found" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FF0000;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-186" value="Manual Retry Trigger" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#808080;strokeWidth=1;dashed=1;fontSize=12;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-187" value="Client" style="shape=actor;fillColor=#DAE8FC;strokeColor=#0000FF;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="585" y="-130" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-188" value="API " style="rounded=1;fillColor=#D5E8D4;strokeColor=#008000;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="260" y="160" width="710" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-189" value="Redis Cache" style="shape=cylinder;fillColor=#F8CECC;strokeColor=#FF0000;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="50" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-190" value="Cosmos DB" style="shape=cylinder;fillColor=#E1D5E7;strokeColor=#800080;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="420" y="740" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-191" value="Blob Storage (Cool Tier)" style="shape=cylinder;fillColor=#FFF2CC;strokeColor=#FFA500;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="820" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-192" value="ADF Pipeline" style="rounded=1;fillColor=#FFD700;strokeColor=#008000;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="1300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-193" value="DLQ (Blob)" style="shape=cylinder;fillColor=#D3D3D3;strokeColor=#808080;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-194" value="Notification" style="shape=note;fillColor=#D3D3D3;strokeColor=#808080;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-195" value="1: GET /record/{id}" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=14;endArrow=classic;endFill=1;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-187" target="A07XjkqsezcwPWkaJlvR-188">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-196" value="2: Check Cache" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-188" target="A07XjkqsezcwPWkaJlvR-189">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-197" value="3: Return Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-189" target="A07XjkqsezcwPWkaJlvR-188">
+          <mxGeometry x="-0.5355" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-198" value="4: Query if Cache Miss" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=14;entryX=0.15;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-188" target="A07XjkqsezcwPWkaJlvR-190">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-199" value="5: Return Data, Cache in Redis" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.479;entryY=1.043;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-190" target="A07XjkqsezcwPWkaJlvR-188">
+          <mxGeometry x="-0.287" y="-30" relative="1" as="geometry">
+            <mxPoint x="550" y="210" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-200" value="6: Check if Not in Cosmos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=14;exitX=0.874;exitY=0.969;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-188" target="A07XjkqsezcwPWkaJlvR-191">
+          <mxGeometry x="-0.0667" y="60" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-201" value="7: Return Data, Cache in Redis" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;entryX=0.945;entryY=1.043;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-191" target="A07XjkqsezcwPWkaJlvR-188">
+          <mxGeometry x="-0.6018" y="60" relative="1" as="geometry">
+            <mxPoint x="1110" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1220" y="720" />
+              <mxPoint x="1220" y="410" />
+              <mxPoint x="931" y="410" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-202" value="1: Query &gt; 90 Days" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-192" target="A07XjkqsezcwPWkaJlvR-190">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-203" value="2: Copy to Blob (Cool Tier)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-192" target="A07XjkqsezcwPWkaJlvR-191">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="1310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-204" value="3: Verify, Delete from Cosmos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;dashed=1;fontSize=14;exitX=1;exitY=0.667;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-191" target="A07XjkqsezcwPWkaJlvR-192">
+          <mxGeometry x="-0.1601" y="30" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-205" value="4: Failed Records (3 Retries)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-192" target="A07XjkqsezcwPWkaJlvR-193">
+          <mxGeometry x="0.5248" y="-20" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-206" value="5: Notify Error" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;exitX=0;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-192" target="A07XjkqsezcwPWkaJlvR-194">
+          <mxGeometry x="0.4872" y="30" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="1360" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-207" value="6: Retry After Fix" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;dashed=1;fontSize=14;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="A07XjkqsezcwPWkaJlvR-193" target="A07XjkqsezcwPWkaJlvR-192">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1190" y="1430" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1140" y="1860" />
+              <mxPoint x="1140" y="1360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A07XjkqsezcwPWkaJlvR-208" value="" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="380" width="80" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

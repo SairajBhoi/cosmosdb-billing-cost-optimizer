@@ -1,0 +1,99 @@
+ 
+<mxfile host="app.diagrams.net" modified="2025-07-13T16:02:00.000Z" agent="Grok 3" version="1.0" pages="1">
+  <diagram id="billing-flow-corrected" name="Billing Records Flow">
+    <mxGraphModel dx="1200" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Client -->
+        <mxCell id="client" value="Client" style="shape=actor;fillColor=#DAE8FC;strokeColor=#0000FF;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="550" y="30" width="60" height="80" as="geometry"/>
+        </mxCell>
+        <!-- API -->
+        <mxCell id="api" value="API (Azure Function)" style="rounded=1;fillColor=#D5E8D4;strokeColor=#008000;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="530" y="150" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Redis -->
+        <mxCell id="redis" value="Redis Cache" style="shape=cylinder;fillColor=#F8CECC;strokeColor=#FF0000;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="200" y="270" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Cosmos DB -->
+        <mxCell id="cosmos" value="Cosmos DB" style="shape=cylinder;fillColor=#E1D5E7;strokeColor=#800080;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="530" y="270" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Blob Storage -->
+        <mxCell id="blob" value="Blob Storage (Cold Tier)" style="shape=cylinder;fillColor=#FFF2CC;strokeColor=#FFA500;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="860" y="270" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <!-- ADF Pipeline -->
+        <mxCell id="adf" value="ADF Pipeline" style="rounded=1;fillColor=#FFD700;strokeColor=#008000;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="530" y="450" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <!-- DLQ -->
+        <mxCell id="dlq" value="DLQ (Blob)" style="shape=cylinder;fillColor=#D3D3D3;strokeColor=#808080;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="860" y="450" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Notification -->
+        <mxCell id="notification" value="Notification" style="shape=note;fillColor=#D3D3D3;strokeColor=#808080;fontColor=#000000;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="860" y="570" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Read Path: Client to API -->
+        <mxCell id="client-api" value="1: GET /record/{id}" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="client" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Read Path: API to Redis -->
+        <mxCell id="api-redis" value="2: Check Cache" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="api" target="redis">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Read Path: Redis to API (Cache Hit) -->
+        <mxCell id="redis-api" value="3: Return Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1" source="redis" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Read Path: API to Cosmos -->
+        <mxCell id="api-cosmos" value="4: Query if Cache Miss" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="api" target="cosmos">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Read Path: Cosmos to API (Found) -->
+        <mxCell id="cosmos-api" value="5: Return Data, Cache in Redis" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1" source="cosmos" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Read Path: API to Blob -->
+        <mxCell id="api-blob" value="6: Check if Not in Cosmos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="api" target="blob">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Read Path: Blob to API (Found) -->
+        <mxCell id="blob-api" value="7: Return Data, Cache in Redis" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1" source="blob" target="api">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Read Path: API to Client (Not Found) -->
+        <mxCell id="api-client-notfound" value="8: 404 Not Found" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0000FF;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1" source="api" target="client">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Archiving Path: ADF to Cosmos -->
+        <mxCell id="adf-cosmos" value="1: Query > 90 Days" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="adf" target="cosmos">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Archiving Path: ADF to Blob -->
+        <mxCell id="adf-blob" value="2: Copy to Blob (Cold Tier)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="adf" target="blob">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Archiving Path: Blob to ADF (Verify) -->
+        <mxCell id="blob-adf" value="3: Verify, Delete from Cosmos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1" source="blob" target="adf">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Archiving Path: ADF to DLQ -->
+        <mxCell id="adf-dlq" value="4: Failed Records (3 Retries)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="adf" target="dlq">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Archiving Path: ADF to Notification -->
+        <mxCell id="adf-notification" value="5: Notify Error" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;fontSize=14;" edge="1" parent="1" source="adf" target="notification">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Archiving Path: DLQ to ADF -->
+        <mxCell id="dlq-adf" value="6: Retry After Fix" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#008000;strokeWidth=2;dashed=1;fontSize=14;" edge="1" parent="1" source="dlq" target="adf">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

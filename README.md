@@ -150,7 +150,34 @@ To ensure no data loss, ADF’s fault tolerance is used:
 - [Handle Error Rows with Mapping Data Flows](https://learn.microsoft.com/en-us/azure/data-factory/how-to-data-flow-error-rows)
 
 
-AI Help:
 
-Gemini Chat history: https://g.co/gemini/share/4568d39051e8
-grok ai Chat history : https://grok.com/share/c2hhcmQtMw%3D%3D_94ff86be-21ee-40ff-81a3-058a49f393db
+## Chat History References
+
+The following links provide context from AI interactions related to the project:
+
+- **Gemini Chat History**: [View Gemini Chat](https://g.co/gemini/share/4568d39051e8)
+- **Grok AI Chat History**: [View Grok Chat](https://grok.com/share/c2hhcmQtMw%3D%3D_94ff86be-21ee-40ff-81a3-058a49f393db)
+
+These conversations contain discussions on cost optimization strategies, Azure CosmosDB configurations, and related technical details.
+
+## Budget Estimation Files
+
+The project includes two Excel files for budget estimation, stored in the `Azure Price estimation` directory of the `cosmosdb-billing-cost-optimizer` repository:
+
+- **Current Budget**
+  - **File Path:** `Azure Price estimation/current-budget.xlsx`  
+  - **Link:** [Current Budget](./Azure%20Price%20estimation/current-budget.xlsx)
+  - **Description:** Contains the current budget allocation and cost breakdown for Azure Cosmos DB usage, including details on throughput (RU/s), storage, and other associated costs.
+
+- **Proposed Budget Estimation**
+  - **File Path:** `Azure Price estimation/proposed-budget-estimation.xlsx`  
+  - **Link:** [Proposed Budget Estimation](./Azure%20Price%20estimation/proposed-budget-estimation.xlsx)
+  - **Description:** Outlines the proposed budget adjustments based on optimization strategies, such as scaling throughput, optimizing data storage, or leveraging reserved capacity.
+
+## Architecture Diagram
+
+The architecture diagram for the CosmosDB billing cost optimizer is stored in the repository:
+
+- **File Path**: `architecture.drawio.png`
+- **Link**: [Architecture Diagram](architecture.drawio.png)
+- **Description**: This diagram illustrates the high-level architecture of the cost optimization solution, including components such as Azure CosmosDB, azure blob storage azure data factory.

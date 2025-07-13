@@ -81,13 +81,13 @@ To ensure no data loss, ADF’s fault tolerance is used:
 | Cosmos DB (Proposed, Storage) | 300  | $0.285 × 2 regions     | $171.00                |
 | Cosmos DB (Proposed, Reads) | -     | $0.285/M RU            | $0.285                 |
 | Blob Storage Cool Tier (GRS) | 300   | $0.026/GB              | $7.80                  |
-| Blob Storage Cool Tier Operations | - | Various                | $10.13132              |
+| Blob Storage Cool Tier Operations | - | Various                | $7.33132               |
 | Blob Storage Geo-Replication | 300   | $0.086 (one-time)      | $25.80 (one-time)      |
 | Blob Storage DLQ (Hot Tier, LRS) | 10 | $0.0208/GB            | $0.208                 |
-| Blob Storage DLQ Operations | -    | Various                | $0.12654               |
-| ADF (Data Flow + Activity) | -   | Various                | $74.401                |
+| Blob Storage DLQ Operations | -    | Various                | $0.07154               |
+| ADF (Data Flow + Activity) | -   | Various                | $74.462                |
 | ADF (Data Movement)      | -         | $0.25/DIU-hour         | $0.0125                |
-| **Total (Proposed, Monthly)** | 600 | -                    | **$263.96336**         |
+| **Total (Proposed, Monthly)** | 600 | -                    | **$260.97036**         |
 | **Total (Proposed, One-Time)** | -  | -                    | **$25.8375**           |
 
 ### Notes
@@ -96,20 +96,18 @@ To ensure no data loss, ADF’s fault tolerance is used:
   - Proposed: 300 GB × $0.285/GB/month × 2 regions = $171.00/month; 1M RUs × $0.285/M RU = $0.285/month.
 - **Blob Storage Cool Tier (GRS)**:
   - Storage: 300 GB × $0.026/GB/month = $7.80/month.
-  - Operations: 300,000 writes × $0.20/10,000 = $6.00; 30,000 list/create × $0.11/10,000 = $0.33; 1M reads × $0.01/10,000 = $1.00; 3,000 other × $0.0044/10,000 = $0.00132; 300 GB retrieval × $0.01/GB = $3.00. Total: **$10.13132/month**.
+  - Operations: 300,000 writes × $0.20/10,000 = $6.00; 30,000 list/create × $0.11/10,000 = $0.33; 1M reads × $0.01/10,000 = $1.00; 3,000 other × $0.0044/10,000 = $0.00132. Total: **$7.33132/month** (no retrieval, as reads don’t incur retrieval costs).
   - Geo-replication: 300 GB × $0.086/GB = $25.80 (one-time).
 - **Blob Storage DLQ (Hot Tier, LRS)**:
   - Storage: 10 GB × $0.0208/GB/month = $0.208/month.
-  - Operations: 5,000 writes × $0.11/10,000 = $0.055; 1,100 list/create × $0.11/10,000 = $0.0121; 10,000 reads × $0.0044/10,000 = $0.0044; 100 other × $0.0044/10,000 = $0.00004; 10 GB retrieval × $0.0055/GB = $0.055. Total: **$0.12654/month**.
+  - Operations: 5,000 writes × $0.11/10,000 = $0.055; 1,100 list/create × $0.11/10,000 = $0.0121; 10,000 reads × $0.0044/10,000 = $0.0044; 100 other × $0.0044/10,000 = $0.00004. Total: **$0.07154/month** (no retrieval).
 - **ADF**:
-  - Data Flow: 1 × 8 vCores × 31 hours × $0.30/vCore-hour = $74.40; 1 activity run × $0.001 = $0.001. Data Movement: 100 GB ÷ 2 GB/DIU-hour = 0.05 DIU-hours × $0.25 = $0.0125/month; Initial: 300 GB ÷ 2 GB/DIU-hour = 0.15 DIU-hours × $0.25 = $0.0375 (one-time). Total Monthly: **$74.4135/month**. One-Time: **$0.0375**.
-- **Total Savings**: Current: $342.00/month. Proposed: $263.96336/month. Savings: $78.03664/month (~23%). One-time costs: $25.8375.
-- **Corrections from Estimate ($395.3399/month)**:
-  - Cosmos DB: Estimate ($85.785) ignores GRS; corrected to $171.285.
-  - Blob Storage (Main): Estimate ($148.1044) includes geo-replication as monthly and 1,000 GB; corrected to $18.13132/month for 300 GB, $25.80 one-time.
-  - Blob Storage (DLQ): Estimate ($24.254) assumes 1,000 GB; corrected to $0.33454 for 10 GB.
-  - ADF: Estimate ($71.4965) excludes data movement; corrected to $74.4135.
-- **Pricing Source**: Azure Blob Storage ($0.026/GB/month Cool Tier, $0.01/10,000 reads, $0.086/GB geo-replication), Cosmos DB ($0.285/GB/month, $0.285/M RU), ADF ($0.30/vCore-hour, $0.001/run, $0.25/DIU-hour), East US Hot Tier ($0.0208/GB/month, $0.0055/GB retrieval).
+  - Data Flow: 1 × 8 vCores × 31 hours × $0.30 = $74.40/month.
+  - Activity Runs: 2 activities × 31 runs × $0.001 = $0.062/month.
+  - Data Movement: 100 GB ÷ 2 GB/DIU-hour = 0.05 DIU-hours × $0.25 = $0.0125/month; Initial: 300 GB ÷ 2 GB/DIU-hour = 0.15 DIU-hours × $0.25 = $0.0375 (one-time).
+  - Total Monthly: $74.40 + $0.062 + $0.0125 = **$74.4745/month**. One-Time: **$0.0375**.
+- **Total Savings**: Current: $342.00/month. Proposed: $260.97036/month. Savings: $81.02964/month (~24%). One-time costs: $25.8375.
+
 
 ## Additional Considerations
 - **Blob Storage Access**: 1M reads cost $1.00/month. Data retrieval ($0.01/GB) may add costs if downloading (e.g., $3.00 for 300 GB).
